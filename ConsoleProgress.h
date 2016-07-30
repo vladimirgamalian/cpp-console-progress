@@ -59,7 +59,7 @@ public:
 
 	std::string percent() const
 	{
-		return std::to_string(static_cast<int>(std::round(getPercent()))) + "%";
+		return std::to_string(static_cast<int>(std::round(getPercent())));
 	}
 
 	std::string elapsed() const
