@@ -3,9 +3,15 @@
 
 TEST_CASE("Foo")
 {
-	ConsoleProgress consoleProgress(100);
+	ConsoleProgress p(100);
 	
-	REQUIRE(progress.bar(0).length() == 0);
-	REQUIRE(progress.bar(40).length() == 40);
-	REQUIRE(progress.bar(80).length() == 80);
+	REQUIRE(p.bar(0).length() == 0);
+	REQUIRE(p.bar(40).length() == 40);
+	REQUIRE(p.bar(80).length() == 80);
+	
+	REQUIRE(p.bar(10).bar() == "----------");
+	p.set(50);
+	REQUIRE(p.bar(10).bar() == "=====-----");
+	p.set(100);
+	REQUIRE(p.bar(10).bar() == "==========");
 }
