@@ -9,9 +9,9 @@ TEST_CASE("Foo")
 	REQUIRE(p.bar(40).length() == 40);
 	REQUIRE(p.bar(80).length() == 80);
 	
-	REQUIRE(p.bar(10).bar() == "----------");
+	REQUIRE(p.bar(10) == "----------");
 	p.set(50);
-	REQUIRE(p.bar(10).bar() == "=====-----");
+	REQUIRE(p.bar(10) == "=====-----");
 	p.set(100);
-	REQUIRE(p.bar(10).bar() == "==========");
+	REQUIRE(p.bar(10) == "==========");
 }
