@@ -2,5 +2,5 @@
 
 TEST_CASE("Foo")
 {
-	REQUIRE(2 * 2 = 4);
+	REQUIRE(2 * 2 == 4);
 }
