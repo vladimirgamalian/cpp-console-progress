@@ -1,0 +1,19 @@
+language: cpp
+sudo: required
+dist: trusty
+
+os:
+  - linux
+  - osx
+  
+compiler:
+  - gcc
+  - clang
+
+script:
+  - cmake .
+  - make
+  - ./testrunner
+  
+notifications:
+  email: false
