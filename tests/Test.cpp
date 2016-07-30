@@ -3,6 +3,9 @@
 
 TEST_CASE("Foo")
 {
-	ConsoleProgress consoleProgress;
-	REQUIRE(2 * 2 == 4);
+	ConsoleProgress consoleProgress(100);
+	
+	REQUIRE(progress.bar(0).length() == 0);
+	REQUIRE(progress.bar(40).length() == 40);
+	REQUIRE(progress.bar(80).length() == 80);
 }
