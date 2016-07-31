@@ -9,16 +9,16 @@
 
 int main()
 {
-	ConsoleProgress progress(100);
+	ConsoleProgress prgs(100);
 
 	for (int i = 0; i < 100; ++i)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
-		progress.step();
-		std::cout << "Download" 
-			<< " [" << progress.bar(40) << "] " << progress.percent()
-			<< " " << progress.eta() << "s"
-			<< "\r";
+		prgs.step();
+		std::cout << "Download [" 
+			<< prgs.bar(40) << "] " 
+			<< prgs.percent() << "% " 
+			<< prgs.eta() << "s  \r";
 	}
 	std::cout << std::endl;
 }
